@@ -159,10 +159,12 @@ Use the same explicit time base that the caller used for the input timestamps;
 both integers must be positive. These functions copy the bytes, PTS, signed DTS
 and IDR flag without encoding or decoding, and leave duration unknown. They do
 not infer a clock from the frame rate. H.264/HEVC retain Annex B framing; AV1
-retains its native OBU framing. Profile, pixel format, colour and video delay
-are left unspecified rather than inferred from NVENC enum values. The returned
-FFmpeg values can be passed directly to `PacketWriter`; use the output stream
-number returned by `add_stream`.
+retains its native OBU framing. Each present colour declaration in the accepted
+settings is copied: primaries, transfer and matrix use their shared H.273 codes,
+and full range maps to FFmpeg's limited/full range. Absent colour values remain
+unspecified. Profile, pixel format and video delay remain unspecified rather
+than inferred from NVENC enum values. The returned FFmpeg values can be passed
+directly to `PacketWriter`; use the output stream number returned by `add_stream`.
 
 ## C and C++ SDK
 
@@ -215,9 +217,11 @@ The video module is licensed under the
 [MIT License](https://github.com/sync-dev-org/pixtreme-transport-video/blob/main/LICENSE).
 The Python bindings incorporate nanobind (BSD-3-Clause) and robin-map (MIT).
 Their copyright notices and license texts are in `nanobind.txt` and
-`robin_map.txt`, included in the wheel's license directory; the `License-File`
-fields in its metadata give the relative paths. The SDK includes the module
-license and the same license files. It supplies the native module without the
-Python bindings or their embedded third-party implementations. The separately
+`robin_map.txt`; `third-party.json` records their versions, source checksums and
+build descriptions. These files are included in the wheel's license directory;
+the `License-File` fields in its metadata give the relative paths. The SDK
+includes the module license and the same license files and provenance record.
+It supplies the native module without the Python bindings or their embedded
+third-party implementations. The separately
 installed pixtreme, pixtreme-transport and codec companion dependencies carry
 their own licenses and notices.
