@@ -26,7 +26,7 @@ NVDEC and NVENC also need a GPU and driver that support the selected codec.
 
 The direct runtime dependencies are `pixtreme>=2.31.1`,
 `pixtreme-transport>=0.53.0`, `pixtreme-transport-ffmpeg>=0.7.1`,
-`pixtreme-transport-nvdec>=0.14.0` and `pixtreme-transport-nvenc>=0.15.0`.
+`pixtreme-transport-nvdec>=0.15.0` and `pixtreme-transport-nvenc>=0.15.0`.
 All three codec companions are installed whichever library a session selects.
 Python installation resolves these packages and their own dependencies.
 
