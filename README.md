@@ -24,8 +24,8 @@ ABI. Video sessions use an NVIDIA GPU and require the CUDA-compatible driver
 specified by the installed [pixtreme](https://pypi.org/project/pixtreme/) release;
 NVDEC and NVENC also need a GPU and driver that support the selected codec.
 
-The direct runtime dependencies are `pixtreme>=2.31.1`,
-`pixtreme-transport>=0.53.0`, `pixtreme-transport-ffmpeg>=0.7.1`,
+The direct runtime dependencies are `pixtreme>=2.32.0`,
+`pixtreme-transport>=0.54.0`, `pixtreme-transport-ffmpeg>=0.7.1`,
 `pixtreme-transport-nvdec>=0.15.0` and `pixtreme-transport-nvenc>=0.15.0`.
 All three codec companions are installed whichever library a session selects.
 Python installation resolves these packages and their own dependencies.
